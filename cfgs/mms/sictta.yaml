@@ -1,0 +1,30 @@
+MODEL:
+  NETWORK: unet
+  CKPT_DIR: ./save_model/mms2d_unet/source-A-source-model-latest.pth
+  DATASET: mms2d
+  NUMBER_CLASS: 4
+  METHOD: sictta
+  EXPNAME: bs01
+
+ADAPTATION:
+  BATCH_SIZE: 1
+  EPOCH: 1
+  TARGET_DOMAIN:
+  - B
+  - C
+  - D
+
+  
+SOURCE:
+  MAX_EPOCHES: 50
+  BATCH_SIZE: 12
+  EVAL_ITERS: 100
+  SOURCE_DOMAIN: A
+  ALL_DOMAIN: 
+    - A
+    - B
+    - C
+    - D
+
+
+  

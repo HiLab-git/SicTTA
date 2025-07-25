@@ -1,0 +1,25 @@
+MODEL:
+  NETWORK: unet
+  CKPT_DIR: ./save_model/mms2d_unet/source-A-source-model-latest.pth
+  DATASET: mms2d
+  NUMBER_CLASS: 4
+  METHOD: tent
+  EXPNAME: bs1
+
+ADAPTATION:
+  BATCH_SIZE: 1
+  EPOCH: 1
+  TARGET_DOMAIN:
+  - B
+  - C
+  - D
+
+OPTIM:
+  METHOD: Adam
+  STEPS: 1
+  BETA: 0.9
+  LR: 2e-3
+  WD: 0.
+  MT: 0.999
+  RST: 0.01
+  AP: 0.92

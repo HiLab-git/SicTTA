@@ -1,0 +1,29 @@
+MODEL:
+  NETWORK: unet
+  DATASET: mms2d
+  NUMBER_CLASS: 4
+  CKPT_DIR: ./save_model/mms2d_unet/source-A-source-model-latest.pth
+  METHOD: source_test
+  EXPNAME: tempo
+SOURCE:
+  MAX_EPOCHES: 300
+  BATCH_SIZE: 10
+  EVAL_ITERS: 500
+  SOURCE_DOMAIN: A
+  ALL_DOMAIN: 
+    - B
+    - C
+    - D
+ADAPTATION:
+  BATCH_SIZE: 10
+  EPOCH: 1
+  TARGET_DOMAIN:
+    - B
+    - C
+    - D
+
+
+
+
+
+  

@@ -1,0 +1,45 @@
+MODEL:
+  NETWORK: unet
+  DATASET: mms2d
+  NUMBER_CLASS: 4
+  CKPT_DIR: /data2/jianghao/TTA-MT/STTA/save_model/mms2d_unet/source-A-source-model-latest.pth
+  METHOD: source
+  EXPNAME: train128
+SOURCE:
+  MAX_EPOCHES: 200
+  BATCH_SIZE: 10
+  EVAL_ITERS: 500
+  SOURCE_DOMAIN: A
+  ALL_DOMAIN: 
+    - B
+    - C
+    - D
+    # - F
+ADAPTATION:
+  BATCH_SIZE: 100
+  EPOCH: 1
+  TARGET_DOMAIN:
+    - B
+    - C
+    - D
+    # - A
+# SOURCE:
+#   MAX_EPOCHES: 200
+#   BATCH_SIZE: 60
+#   EVAL_ITERS: 1000
+#   SOURCE_DOMAIN: A
+#   ALL_DOMAIN: 
+#     - A
+#     - B
+#     - C
+#     - D
+#   TARGET_DOMAIN: 
+#     - B
+#     - C
+#     - D
+
+
+
+
+
+  

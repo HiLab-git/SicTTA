@@ -1,0 +1,16 @@
+MODEL:
+  NETWORK: unet
+  CKPT_DIR: ./save_model/mms2d_unet/source-A-source-model-latest.pth
+  DATASET: mms2d
+  NUMBER_CLASS: 4
+  METHOD: norm
+  EXPNAME: bs1
+
+ADAPTATION:
+  BATCH_SIZE: 1
+  EPOCH: 1
+  TARGET_DOMAIN:
+  - B
+  - C
+  - D
+
