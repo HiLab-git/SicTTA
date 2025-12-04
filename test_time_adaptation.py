@@ -14,7 +14,7 @@ from robustbench.data import get_dataset, convert_2d
 from robustbench.utils import load_model, setup_source
 from robustbench.losses import DiceLoss
 from robustbench.tta import (
-    setup_norm, setup_tent, setup_sictta, setup_sar, setup_meant, setup_sitta
+    setup_norm, setup_tent, setup_sictta, setup_sar, setup_meant
 )
 from utils.evaluate import get_multi_class_evaluation_score
 from utils.conf import cfg, load_cfg_fom_args
@@ -52,10 +52,10 @@ def run_adaptation():
     os.makedirs(save_model_dir, exist_ok=True)
 
     for epoch in tqdm(range(cfg.ADAPTATION.EPOCH), ncols=70):
-        all_scores_dice = []
-        all_scores_dice2 = []
-
         for target_domain in cfg.ADAPTATION.TARGET_DOMAIN:
+            all_scores_dice = []
+            all_scores_dice2 = []
+
             db_all, _, _ = get_dataset(dataset=cfg.MODEL.DATASET, domain=target_domain, online=True)
             loader = torch.utils.data.DataLoader(db_all, batch_size=cfg.ADAPTATION.BATCH_SIZE, shuffle=False, num_workers=10)
 

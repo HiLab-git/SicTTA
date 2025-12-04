@@ -107,7 +107,7 @@ def get_dataset(dataset, domain, online = False):
                             ToTensor(),
                             ])
     db_train,db_valid,db_test = dataset_all(
-        base_dir='../data',
+        base_dir='./data',
         dataset=dataset,
         target=domain,
         transform_train = transform_train,

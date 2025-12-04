@@ -1,0 +1,57 @@
+[25/12/04 19:45:32] [conf.py:  233]: PyTorch Version: torch=2.3.1+cu121, cuda=12.1, cudnn=8902
+[25/12/04 19:45:32] [conf.py:  235]: ADAPTATION:
+  BATCH_SIZE: 10
+  EPOCH: 1
+  NUMBER_CLASS: 2
+  TARGET: B
+  TARGET_DOMAIN: ['B', 'C', 'D']
+BN:
+  EPS: 1e-05
+  MOM: 0.1
+CKPT_DIR: ./ckpt
+CORRUPTION:
+  DATASET: cifar10
+  NUM_EX: 10000
+  SEVERITY: [5, 4, 3, 2, 1]
+  TYPE: ['gaussian_noise', 'shot_noise', 'impulse_noise', 'defocus_blur', 'glass_blur', 'motion_blur', 'zoom_blur', 'snow', 'frost', 'fog', 'brightness', 'contrast', 'elastic_transform', 'pixelate', 'jpeg_compression']
+CUDNN:
+  BENCHMARK: True
+DATA_DIR: ./data
+DESC: 
+LOG_DEST: source_test_251204_194532.txt
+LOG_TIME: 251204_194532
+MODEL:
+  ARCH: Standard
+  CKPT_DIR: ./save_model/mms2d_unet/source-A-source-model-latest.pth
+  DATASET: mms2d
+  EPISODIC: False
+  EXPNAME: tempo
+  METHOD: source_test
+  NETWORK: unet
+  NUMBER_CLASS: 4
+  NUM_DEC: 5
+OPTIM:
+  AP: 0.92
+  BETA: 0.9
+  DAMPENING: 0.0
+  LR: 0.001
+  METHOD: Adam
+  MOMENTUM: 0.9
+  MT: 0.999
+  NESTEROV: True
+  RST: 0.01
+  STEPS: 1
+  WD: 0.0
+RNG_SEED: 1
+SAVE_DIR: ./output
+SOURCE:
+  ALL_DOMAIN: ['C']
+  BATCH_SIZE: 10
+  EVAL_ITERS: 500
+  MAX_EPOCHES: 300
+  SOURCE_DOMAIN: A
+  TARGET_DOMAIN: ['B', 'C', 'D']
+TEST:
+  BATCH_SIZE: 128
+[25/12/04 19:45:32] [test_time_adaptation.py:   27]: Test-time adaptation method: SOURCE_TEST
+[25/12/04 19:45:56] [test_time_adaptation.py:  126]: Adapted model saved to save_model/mms2d_unet/source_test-A-tempo-model-latest.pth

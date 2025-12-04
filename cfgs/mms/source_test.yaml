@@ -11,9 +11,9 @@ SOURCE:
   EVAL_ITERS: 500
   SOURCE_DOMAIN: A
   ALL_DOMAIN: 
-    - B
+    # - B
     - C
-    - D
+    # - D
 ADAPTATION:
   BATCH_SIZE: 10
   EPOCH: 1
