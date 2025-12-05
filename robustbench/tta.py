@@ -1,7 +1,7 @@
 from copy import deepcopy
 import torch
 import torch.optim as optim
-from sotas import (sictta, tent, norm, meant, sar, sitta)
+from sotas import (sictta, tent, norm, meant, sar)
 from utils.sam import SAM
 from utils.conf import cfg
 import math
