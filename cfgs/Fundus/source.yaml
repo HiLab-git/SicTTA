@@ -1,0 +1,29 @@
+MODEL:
+  NETWORK: unet
+  CKPT_DIR: ./save_model/Fundus-doFE_unet/source-Domain1-source-model-latest.pth
+  DATASET: Fundus-doFE
+  NUMBER_CLASS: 3
+  METHOD: source_test
+  EXPNAME: bs01
+
+ADAPTATION:
+  BATCH_SIZE: 1
+  EPOCH: 1
+  TARGET_DOMAIN:
+    - Domain3
+    - Domain4
+
+
+ADAPTATION:
+  BATCH_SIZE: 100
+  EPOCH: 1
+  TARGET_DOMAIN:
+    - B
+    - C
+    - D
+
+
+
+
+
+  

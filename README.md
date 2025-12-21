@@ -53,10 +53,22 @@ Official website: https://www.ub.edu/mnms/
 
 4. Extract the processed data into: SicTTA/data/mms2d/
 
+## 📂 Dataset: Fundus
+### Steps:
+
+1. Apply for and obtain **official permission** to use the dataset.  
+2. Download the dataset through the official portal.  
+3. (Optional) Use our **processed Fundus data**:
+
+   👉 Google Drive:  
+   https://drive.google.com/file/d/1TKOwue_6H1a78IU-wMXHTq0LfDNu4nGq/view?usp=sharing
+
+4. Extract the processed data into: SicTTA/data/Fundus-doFE/
+
 
 ---
 
-## 🚀 Source Model Training
+## 🚀 Source Model Training (Using the M&Ms Dataset; Fundus Dataset Follows the Same Procedure)
 
 To train a UNet segmentation model on the source domain:
 
@@ -91,6 +103,7 @@ python test_time_adaptation.py --cfg cfgs/mms/sar.yaml
 # SicTTA (our method)
 python test_time_adaptation.py --cfg cfgs/mms/sictta.yaml
 ```
+
 
 ---
 

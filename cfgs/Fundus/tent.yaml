@@ -1,0 +1,35 @@
+MODEL:
+  NETWORK: unet
+  CKPT_DIR: ./save_model/Fundus-doFE_unet/source-Domain1-source-model-latest.pth
+  DATASET: Fundus-doFE
+  NUMBER_CLASS: 3
+  METHOD: tent
+  EXPNAME: bs01
+
+ADAPTATION:
+  BATCH_SIZE: 1
+  EPOCH: 1
+  TARGET_DOMAIN:
+    - Domain3
+    - Domain4
+    
+OPTIM:
+  METHOD: Adam
+  STEPS: 1
+  BETA: 0.9
+  LR: 1e-3
+  WD: 0.
+  MT: 0.999
+  RST: 0.01
+  AP: 0.92
+  
+SOURCE:
+  MAX_EPOCHES: 50
+  BATCH_SIZE: 12
+  EVAL_ITERS: 100
+  SOURCE_DOMAIN: A
+  ALL_DOMAIN: 
+    - A
+    - B
+    - C
+    - D
